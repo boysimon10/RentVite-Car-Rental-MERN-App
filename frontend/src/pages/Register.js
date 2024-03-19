@@ -20,7 +20,7 @@ function Register() {
     setPhoneError("");
 
     try {
-      const response = await axios.post(`${process.env.REACT_APP_API_URL}register`, {
+      const response = await axios.post(`${process.env.REACT_APP_API_URL}user/register`, {
         nom,
         email,
         password,
