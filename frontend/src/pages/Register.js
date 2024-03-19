@@ -27,7 +27,7 @@ function Register() {
         telephone,
       });
       console.log(response.data);
-      window.location = "/account";
+      window.location = "/login";
     } catch (err) {
       if (err.response && err.response.data && err.response.data.error) {
         const errorMessage = err.response.data.error;
