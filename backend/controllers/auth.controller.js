@@ -65,6 +65,6 @@ exports.signIn = async (req, res) => {
 };
 
 exports.logOut = (req, res) => {
-    res.clearCookie('token');
+    res.clearCookie('token', { secure: true, sameSite: 'None' });
     res.status(200).json({ message: 'Déconnexion réussie' });
 };
