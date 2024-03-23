@@ -82,6 +82,15 @@ const CarDetail = () => {
         alert("Vous ne pouvez pas louer votre propre voiture.");
         return;
       }
+    if (startDate === endDate) {
+      alert("La date de fin ne peut pas être la même que la date de début.");
+      throw new Error("La date de fin ne peut pas être la même que la date de début.");
+    }
+
+    if (new Date(startDate) > new Date(endDate)) {
+      alert("La date de fin doit être ultérieure à la date de début.")
+      throw new Error("La date de fin doit être ultérieure à la date de début.");
+    }
 
       const response = await axios.post(`${process.env.REACT_APP_API_URL}booking`, {
           user: uid, // Utilisation de l'userId du contexte utilisateur
